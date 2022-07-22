@@ -1,0 +1,44 @@
+{
+  "name": "@dauletbaev/telegram-bot",
+  "version": "1.0.0",
+  "description": "Telegram bot api",
+  "author": "Abat Dauletbaev",
+  "homepage": "https://github.com/dauletbaev/telegram-bot-ts",
+  "main": "dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/dauletbaev/telegram-bot-ts.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dauletbaev/telegram-bot-ts/issues"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "clean": "rm -rf dist tsconfig.tsbuildinfo",
+    "build": "npm run typecheck && esbuild `find src \\( -name '*.ts' ! -name '*.d.ts' \\)` --platform=node --outdir=dist --resolve-extensions=.js && npm run declaration && npm run copyTypes",
+    "copyTypes": "cp -R ./src/typings ./dist/",
+    "typecheck": "tsc --noEmit",
+    "declaration": "tsc --emitDeclarationOnly --outDir dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "telegram",
+    "bot",
+    "api"
+  ],
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "node-fetch": "^3.2.6"
+  },
+  "devDependencies": {
+    "@types/node": "^18.0.0",
+    "esbuild": "^0.14.48",
+    "typescript": "^4.7.4"
+  }
+}
