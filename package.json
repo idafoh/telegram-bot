@@ -1,6 +1,6 @@
 {
   "name": "@dauletbaev/telegram-bot",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Telegram bot api",
   "author": "Abat Dauletbaev",
   "homepage": "https://github.com/dauletbaev/telegram-bot-ts",
